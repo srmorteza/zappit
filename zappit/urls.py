@@ -19,6 +19,7 @@ from posts import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/post',views.PostList.as_view()),
+    path('api/post/<int:pk>',views.PostRetrieveDestroy.as_view()),
     path('api/post/<int:pk>/vote', views.VoteCreate.as_view()),
     path('api-auth', include('rest_framework.urls')),
 ]
